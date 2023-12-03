@@ -24,7 +24,7 @@ public:
     int DosesReceived = 0;
 };
 
-ostream& operator<<(ostream& os, const UserRecord& UR) //DONE   ALI
+ostream& operator<<(ostream& os, const UserRecord& UR) 
 {
     os << "National ID:\t\t" << "Full Name:\t\t" << "Gender:\t\t" << "Age:\t\t" << "Governorate:\t\t" << "Number Of Doses Received:\n";
     os << UR.NationalID << "\t\t" << UR.FullName << "\t\t" << UR.Gender << "\t\t" << UR.Age << "\t\t" << UR.Governorate << "\t\t\t" << UR.DosesReceived << endl;
@@ -36,7 +36,7 @@ vector<UserRecord> WaitingList;
 map<long long, UserRecord> Records;
 vector<string> Gov = { "Alexandria", "Aswan", "Asyut", "Beheira", "Beni Suef", "Cairo", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag", "South Sinai", "Suez", "alexandria", "aswan", "asyut", "beheira", "beni suef", "cairo", "dakahlia", "damietta", "faiyum", "gharbia", "giza", "ismailia", "kafr el sheikh", "luxor", "matruh", "minya", "monufia", "new valley", "north sinai", "port said", "qalyubia", "qena", "red sea", "sharqia", "sohag", "south sinai", "suez" };
 
-void WriteToTextFile()      // DONE     MARIETTE & ALI
+void WriteToTextFile()      
 {
     ofstream MyFile;
     try {
@@ -83,7 +83,7 @@ void WriteToTextFile()      // DONE     MARIETTE & ALI
     }
 }
 
-void ReadFromTextFile()     // DONE     MARIETTE & ALI
+void ReadFromTextFile()     
 {
     ifstream MyFile;
     try {
@@ -230,7 +230,7 @@ void MaskingPswd(string& Pswd)  //DONE      MARIETTE
     cout << endl;
 }
 
-void MainMenu()     //DONE
+void MainMenu()     
 {
     cout << "1. Add Personal Record.\n";
     cout << "2. Sign In As User.\n";
@@ -241,7 +241,7 @@ void MainMenu()     //DONE
 
 // User Functions
 
-void AddRecord()   //DONE  MARIETTE
+void AddRecord()   
 {
     UserRecord NewRecord, TestRecord;
     bool GovFound = false;
@@ -404,7 +404,7 @@ void DisplayRecord(long long Id)   // DONE      ALI
     }
 }
 
-void EditRecord(long long ID)       //DONE      ALI
+void EditRecord(long long ID)       
 {
     UserRecord TestRecord;
     bool GovFound = false, exit = false;
@@ -533,7 +533,7 @@ void EditRecord(long long ID)       //DONE      ALI
     }
 }
 
-void DeleteRecord(long long ID)       //DONE       PATRICK
+void DeleteRecord(long long ID)       
 {
     int pos = 0;
     for (auto it = WaitingList.begin(); it != WaitingList.end(); it++)
@@ -551,7 +551,7 @@ void DeleteRecord(long long ID)       //DONE       PATRICK
 
 //Admin Functions
 
-void AdminMenu()        //DONE
+void AdminMenu()        
 {
     cout << "********************* Admin cannot edit or update any record **************** \n";
     cout << "1. View all or any record(s) by entering only National ID.\n";
@@ -564,7 +564,7 @@ void AdminMenu()        //DONE
     cout << "Any Other Number To Exit.\n";
 }
 
-void Display()   //DONE     ALI
+void Display()   
 {
     while (true)
     {
@@ -604,7 +604,7 @@ void Display()   //DONE     ALI
     }
 }
 
-void Delete()       //DONE     PATRICK
+void Delete()       
 {
     while (true)
     {
@@ -642,7 +642,7 @@ void Delete()       //DONE     PATRICK
     }
 }
 
-void FilterByDoseNumber()   //DONE      JOUDY
+void FilterByDoseNumber()   
 {
     while (true)
     {
@@ -672,7 +672,7 @@ void FilterByDoseNumber()   //DONE      JOUDY
     }
 }
 
-void SortByAge()    //DONE    HASSAN
+void SortByAge()    
 {
     // Copy Records into a temporary vector to allow sorting
     vector<UserRecord> temp;
@@ -728,7 +728,7 @@ void SortByAge()    //DONE    HASSAN
     }
 }
 
-void DisplayWaitingList()       //DONE     HASSAN
+void DisplayWaitingList()       
 {
     cout << "\t\t\t\t\******************** Waiting List *************************\n";
     for (int i = 0; i < WaitingList.size(); i++)
@@ -737,7 +737,7 @@ void DisplayWaitingList()       //DONE     HASSAN
     }
 }
 
-void ViewBasicStatistics()      //DONE     SANDRA
+void ViewBasicStatistics()      
 {
     int totalReceivedFirstDose = 0;
     int totalReceivedBothDoses = 0;
@@ -769,7 +769,7 @@ void ViewBasicStatistics()      //DONE     SANDRA
     cout << "Percentage of males registered in the system: " << (float)(((Records.size() - totalFemales) * 100.0) / Records.size()) << "%" << endl << endl;
 }
 
-void GovernorateInfo()  //DONE     PATRICK      BONUS
+void GovernorateInfo()  
 {
     do
     {
@@ -828,7 +828,7 @@ void GovernorateInfo()  //DONE     PATRICK      BONUS
     } while (true);
 }
 
-void AgeGroupInfo() //DONE      KAREN       BONUS
+void AgeGroupInfo() 
 {
     do
     {
@@ -869,7 +869,7 @@ void AgeGroupInfo() //DONE      KAREN       BONUS
     } while (true);
 }
 
-void ViewAdvancedStatistics()   //DONE  BONUS  
+void ViewAdvancedStatistics()   
 {
     while (true)
     {
